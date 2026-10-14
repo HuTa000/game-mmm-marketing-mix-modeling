@@ -1,0 +1,11 @@
+{
+  "lite": true,
+  "source_file": "stage2_mmm_idata.pkl",
+  "source_size_mb": 114.2,
+  "lite_size_mb": 22.7,
+  "chains": 4,
+  "draws_per_chain": 300,
+  "total_draws": 1200,
+  "created": "2026-10-10 09:52:55",
+  "note": "由 --meta-only 补写（未重新抽稀）"
+}

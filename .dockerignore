@@ -1,0 +1,40 @@
+# ---------- 虚拟环境 / 缓存 ----------
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# ---------- 版本控制与协作工具 ----------
+.git/
+.gitignore
+.workbuddy/
+.github/
+
+# ---------- 开发期一次性脚本（非主链路，不影响运行） ----------
+archive/
+
+# ---------- 大体积全量后验（114MB）----------
+# 精简版（约 23MB）会一并打进去，应用默认优先加载它。
+# 若镜像里两个都没有，首次点击「建模与诊断」会触发 10~20 分钟的 NUTS 采样。
+outputs/reports/stage2_mmm_idata.pkl
+
+# ---------- 本地拟合缓存（按会话生成，不必进镜像） ----------
+outputs/reports/app_fit_*.pkl
+outputs/reports/.cache/
+outputs/reports/*.tmp
+
+# ---------- 编辑器 / 系统 ----------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ---------- 密钥（绝不能进镜像） ----------
+.env
+.env.*
+*.key
+.streamlit/secrets.toml

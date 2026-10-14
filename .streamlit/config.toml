@@ -1,0 +1,31 @@
+# Streamlit 主题与服务配置
+# 视觉语言与 docs/阶段5 的 HTML 报告保持一致（同一套品牌色）
+# 说明：具体字体栈在 app/core/ui.py::FONT_STACK 中定义（CSS 注入），
+#       这里只把 Streamlit 自身组件切到无衬线，避免两套字体并存。
+[theme]
+base = "light"
+primaryColor = "#2b6cb0"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f5f7fa"
+textColor = "#1a202c"
+borderColor = "#e2e8f0"
+font = "sans-serif"
+headingFont = "sans-serif"
+codeFont = "monospace"
+
+[server]
+# 关闭使用统计上报
+headless = true
+# 上传大小上限：MMM 的周度数据通常很小，给 50MB 足够
+maxUploadSize = 50
+
+[browser]
+gatherUsageStats = false
+
+[client]
+# 演示时若出错，错误详情能让排查快很多；对外演示可改为 "none"
+showErrorDetails = "full"
+
+[runner]
+# 长任务（贝叶斯采样）期间不要让界面做多余的脚本重跑
+fastReruns = true

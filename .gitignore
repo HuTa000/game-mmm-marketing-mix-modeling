@@ -1,0 +1,47 @@
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# ---------- 虚拟环境 ----------
+.venv/
+venv/
+env/
+
+# ---------- 密钥与本地配置 ----------
+.env
+.env.*
+!.env.example
+*.key
+
+# ---------- 大体积模型存档 ----------
+# 全量后验 114MB（可由 src/stage2_model.py 重新生成），不进仓库
+outputs/reports/*.pkl
+outputs/reports/*.nc
+# 例外：**精简版后验**只有约 23MB，是「部署即可用」的关键（见 DEPLOY.md），
+# 由 src/export_lite_posterior.py 生成，应当提交。
+!outputs/reports/stage2_mmm_idata_lite.pkl
+# 精简版的元信息旁挂文件（链数 / 抽样数 / 体积），几 KB，页面要读它
+!outputs/reports/stage2_mmm_idata_lite.json
+
+# ---------- 运行缓存 ----------
+outputs/reports/.cache/
+# 视觉体检脚本（src/experiments/visual_audit.py --shot）的临时截图
+outputs/screenshots/_audit/
+
+# ---------- 编辑器 / 系统 ----------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ---------- 本地工作目录 ----------
+# 本地开发工具产生的过程记录，不属于项目交付物
+.workbuddy/
+.workbuddy*
+
+# ---------- 注意 ----------
+# outputs/figures/*.png 与 outputs/reports/*.csv 是项目成果，应当提交
+# outputs/screenshots/*.png 是演示截图，也应当提交
